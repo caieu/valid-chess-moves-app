@@ -3,23 +3,24 @@ import Cell from "../Cell/Cell";
 import PropTypes from "prop-types";
 import "./Board.css";
 
-const Board = props => {
+const Board = ({ selectedPosition, onCellClick, possibleMoves }) => {
   const columns = ["A", "B", "C", "D", "E", "F", "G", "H"];
-  const rows = [1, 2, 3, 4, 5, 6, 7, 8];
-  const onCellClick = position => {
-    console.log(position);
+  const rows = [8, 7, 6, 5, 4, 3, 2, 1];
+  const isPossibleCell = position => {
+    return possibleMoves.indexOf(position) >= 0;
   };
   return (
     <div className="board">
-      {columns.map((column, columnIndex) => (
-        <div key={columnIndex}>
-          {rows.map((row, rowIndex) => (
+      {rows.map((row, rowIndex) => (
+        <div key={rowIndex}>
+          {columns.map((column, columnIndex) => (
             <Cell
-              key={rowIndex}
+              key={columnIndex}
               row={rowIndex}
               column={columnIndex}
               position={`${column}${row}`}
               onClick={onCellClick}
+              highlight={isPossibleCell(`${column}${row}`)}
             ></Cell>
           ))}
         </div>
@@ -28,6 +29,10 @@ const Board = props => {
   );
 };
 
-Board.propTypes = {};
+Board.propTypes = {
+  selectedPosition: PropTypes.string,
+  onCellClick: PropTypes.func,
+  possibleMoves: PropTypes.array
+};
 
 export default Board;

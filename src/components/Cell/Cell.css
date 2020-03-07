@@ -12,3 +12,7 @@
 .dark-color {
   background-color: black;
 }
+
+.highlight {
+  background-color: cadetblue !important;
+}

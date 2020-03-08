@@ -1,0 +1,25 @@
+@import "./variables.scss";
+.App {
+  position: absolute;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  height: calc(100% - (#{$headerHeight} * 2));
+  width: 100%;
+  margin-top: $headerHeight;
+}
+
+.fixed-top {
+  height: $headerHeight;
+}
+
+.fixed-bottom {
+  height: $headerHeight;
+}
+
+.footer {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: #6c757d;
+  text-align: left;
+  caption-side: bottom;
+}

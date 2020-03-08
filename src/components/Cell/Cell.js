@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Cell.css";
+import { Spinner } from "react-bootstrap";
 
-const Cell = ({ row, column, position, onClick }) => {
+import "./Cell.scss";
+
+const Cell = ({ row, column, position, onClick, highlight, children }) => {
   const handleClick = () => {
     onClick(position);
   };
@@ -16,15 +18,23 @@ const Cell = ({ row, column, position, onClick }) => {
     return odd ? "dark-color" : "light-color";
   };
   return (
-    <div className={`cell ${getCellColor(column, row)}`} onClick={handleClick}>
-      {position}
+    <div
+      className={`cell ${getCellColor(column, row)} ${
+        highlight ? "highlight" : ""
+      }`}
+      onClick={handleClick}
+    >
+      {children}
     </div>
   );
 };
 
 Cell.propTypes = {
+  row: PropTypes.number,
+  column: PropTypes.number,
   position: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  highlight: PropTypes.bool
 };
 
 export default Cell;

@@ -1,0 +1,10 @@
+.home-container {
+  height: 100%;
+  .board-row {
+    height: 100%;
+    padding: 10px;
+    .col {
+      margin: auto;
+    }
+  }
+}

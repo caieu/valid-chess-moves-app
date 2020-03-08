@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Cell.css";
+import { Spinner } from "react-bootstrap";
 
-const Cell = ({ row, column, position, onClick, highlight }) => {
+import "./Cell.scss";
+
+const Cell = ({ row, column, position, onClick, highlight, children }) => {
   const handleClick = () => {
     onClick(position);
   };
@@ -22,7 +24,7 @@ const Cell = ({ row, column, position, onClick, highlight }) => {
       }`}
       onClick={handleClick}
     >
-      {position}
+      {children}
     </div>
   );
 };

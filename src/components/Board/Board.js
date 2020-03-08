@@ -1,9 +1,12 @@
 import React from "react";
-import Cell from "../Cell/Cell";
 import PropTypes from "prop-types";
-import "./Board.css";
+import { Spinner } from "react-bootstrap";
+import Cell from "../Cell/Cell";
+import { ReactComponent as KnightIcon } from "../../assets/knight.svg";
 
-const Board = ({ selectedPosition, onCellClick, possibleMoves }) => {
+import "./Board.scss";
+
+const Board = ({ selectedPosition, onCellClick, possibleMoves, loading }) => {
   const columns = ["A", "B", "C", "D", "E", "F", "G", "H"];
   const rows = [8, 7, 6, 5, 4, 3, 2, 1];
   const isPossibleCell = position => {
@@ -21,7 +24,18 @@ const Board = ({ selectedPosition, onCellClick, possibleMoves }) => {
               position={`${column}${row}`}
               onClick={onCellClick}
               highlight={isPossibleCell(`${column}${row}`)}
-            ></Cell>
+            >
+              {selectedPosition === `${column}${row}` && !loading && (
+                <KnightIcon />
+              )}
+              {selectedPosition === `${column}${row}` && loading && (
+                <Spinner
+                  className="cell-spinner"
+                  animation="grow"
+                  variant="light"
+                />
+              )}
+            </Cell>
           ))}
         </div>
       ))}
@@ -32,7 +46,8 @@ const Board = ({ selectedPosition, onCellClick, possibleMoves }) => {
 Board.propTypes = {
   selectedPosition: PropTypes.string,
   onCellClick: PropTypes.func,
-  possibleMoves: PropTypes.array
+  possibleMoves: PropTypes.array,
+  loading: PropTypes.bool
 };
 
 export default Board;

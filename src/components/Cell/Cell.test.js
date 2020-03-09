@@ -12,4 +12,8 @@ describe("Cell", () => {
     wrapper.simulate("click");
     expect(click).toHaveBeenCalled();
   });
+  it("expect highlight class", () => {
+    const wrapper = shallow(<Cell highlight={true}></Cell>);
+    expect(wrapper.find(".highlight").length).toBe(1);
+  });
 });

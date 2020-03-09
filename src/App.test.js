@@ -1,8 +1,14 @@
 import React from "react";
-import { render } from "@testing-library/react";
 import App from "./App";
+import Enzyme, { shallow } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import Home from "./pages/Home";
 
-test("renders learn react link", () => {
-  const { getByText } = render(<App />);
-  expect(true).toBe(true);
+Enzyme.configure({ adapter: new Adapter() });
+
+describe("App", () => {
+  it("renders home page", () => {
+    const wrapper = shallow(<App />);
+    expect(wrapper.find(Home).length).toBe(1);
+  });
 });

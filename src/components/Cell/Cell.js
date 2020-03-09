@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Spinner } from "react-bootstrap";
 
 import "./Cell.scss";
 

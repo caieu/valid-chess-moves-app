@@ -5,7 +5,7 @@ import { shallow } from "enzyme";
 
 describe("Board", () => {
   it("expect 64 cells inside the board", () => {
-    const wrapper = shallow(<Board />);
+    const wrapper = shallow(<Board possibleMoves={[]} />);
     expect(wrapper.find(Cell).length).toBe(64);
   });
 });

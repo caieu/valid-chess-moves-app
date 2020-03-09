@@ -1,0 +1,38 @@
+.wizard-container {
+  .welcome-container {
+    .logo {
+      width: 20%;
+      height: 20%;
+      @media only screen and (max-width: 320px) {
+        width: 50%;
+        height: 50%;
+      }
+    }
+    .welcome-title {
+      padding: 50px;
+      @media only screen and (max-width: 320px) {
+        padding: 20px;
+      }
+      h2 {
+        @media only screen and (max-width: 320px) {
+          padding: 20px;
+          font-size: large !important;
+        }
+      }
+    }
+  }
+
+  .card {
+    width: 18rem;
+    margin: auto;
+    @media only screen and (max-width: 320px) {
+      width: auto;
+    }
+    img {
+      @media only screen and (max-width: 320px) {
+        width: 80%;
+        margin: auto;
+      }
+    }
+  }
+}

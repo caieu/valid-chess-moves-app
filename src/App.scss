@@ -6,6 +6,7 @@
   height: calc(100% - (#{$headerHeight} * 2));
   width: 100%;
   margin-top: $headerHeight;
+  overflow: auto;
 }
 
 .fixed-top {

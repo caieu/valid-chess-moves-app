@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CSSTransitionGroup } from "react-transition-group";
 import Wizard from "../components/Wizard/Wizard";
 import Board from "../components/Board/Board";

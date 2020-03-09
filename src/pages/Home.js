@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CSSTransitionGroup } from "react-transition-group";
 import Wizard from "../components/Wizard/Wizard";
 import Board from "../components/Board/Board";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import { GetValidMoves } from "../api";
 import "./Home.scss";
 
@@ -12,14 +12,12 @@ const Home = props => {
   let [selectedPosition, setSelectedPosition] = useState("");
   let [loading, setLoading] = useState(false);
   const onSelectedPosition = position => {
-    if (position !== selectedPosition) {
-      setLoading(true);
-      setSelectedPosition(position);
-    }
+    setSelectedPosition(position);
+    setPossibleMoves([]);
   };
-  useEffect(() => {
+  const onShowPossiblePositions = () => {
     if (selectedPosition) {
-      setPossibleMoves([]);
+      setLoading(true);
       GetValidMoves("knight", selectedPosition, 2)
         .then(response => {
           setPossibleMoves(response.data.positions);
@@ -30,7 +28,7 @@ const Home = props => {
           setPossibleMoves([]);
         });
     }
-  }, [selectedPosition]);
+  };
 
   return (
     <Container className="home-container">
@@ -48,13 +46,20 @@ const Home = props => {
         )}
         {!wizard && (
           <Row className="board-row">
-            <Col>
+            <Col xs={12}>
               <Board
                 selectedPosition={selectedPosition}
                 onCellClick={onSelectedPosition}
                 possibleMoves={possibleMoves}
                 loading={loading}
               ></Board>
+              <Button
+                className="show-button"
+                variant="dark"
+                onClick={onShowPossiblePositions}
+              >
+                Show
+              </Button>
             </Col>
           </Row>
         )}

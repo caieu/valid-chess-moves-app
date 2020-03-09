@@ -19,12 +19,25 @@
 
 .light-color {
   background-color: $cellLightColor;
+  svg {
+    fill: black;
+  }
 }
 
 .dark-color {
   background-color: $cellDarkColor;
+  svg {
+    fill: white;
+  }
 }
 
 .highlight {
   background-color: $highlightColor !important;
+  animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.8;
+  }
 }

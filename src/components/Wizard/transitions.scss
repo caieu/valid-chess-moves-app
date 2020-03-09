@@ -1,0 +1,84 @@
+.animated {
+  animation-duration: 0.8192s;
+  animation-fill-mode: backwards;
+  transform-style: preserve-3d;
+}
+
+/** intro */
+@keyframes intro {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.intro {
+  animation: intro 1s ease-out;
+}
+
+/** enterRight */
+@keyframes enterRight {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.enterRight {
+  animation-name: enterRight;
+}
+
+/** enterLeft */
+@keyframes enterLeft {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.enterLeft {
+  animation-name: enterLeft;
+}
+
+/** exitRight */
+@keyframes exitRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.exitRight {
+  animation-name: exitRight;
+  display: none;
+}
+
+/** exitLeft */
+@keyframes exitLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.exitLeft {
+  animation-name: exitLeft;
+  display: none;
+}

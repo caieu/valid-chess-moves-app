@@ -1,21 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HowToGif from "../../../assets/howto.gif";
+import FindGif from "../../../assets/find.gif";
 import { Card, Button, ButtonGroup } from "react-bootstrap";
 
-const HowTo = ({ nextStep, previousStep }) => {
+const Find = ({ nextStep, previousStep }) => {
   return (
-    <Card className="how-to-container">
-      <Card.Img variant="top" src={HowToGif} />
+    <Card className="find-container">
+      <Card.Img variant="top" src={FindGif} />
       <Card.Body>
-        <Card.Title>How to use</Card.Title>
-        <Card.Text>Click or tap at any cell of the board.</Card.Text>
+        <Card.Title>Finding moves</Card.Title>
+        <Card.Text>
+          Click on show button to find all the possbile valid moves.
+        </Card.Text>
         <ButtonGroup>
           <Button variant="dark" onClick={previousStep}>
             Back
           </Button>
           <Button variant="dark" onClick={nextStep}>
-            Next
+            next
           </Button>
         </ButtonGroup>
       </Card.Body>
@@ -23,9 +25,9 @@ const HowTo = ({ nextStep, previousStep }) => {
   );
 };
 
-HowTo.propTypes = {
+Find.propTypes = {
   nextStep: PropTypes.func,
   previousStep: PropTypes.func
 };
 
-export default HowTo;
+export default Find;

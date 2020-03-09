@@ -3,6 +3,7 @@ import StepWizard from "react-step-wizard";
 import PropTypes from "prop-types";
 import Welcome from "./steps/Welcome";
 import HowTo from "./steps/HowTo";
+import Find from "./steps/Find";
 import Results from "./steps/Results";
 import "./transitions.scss";
 import "./Wizard.scss";
@@ -18,10 +19,9 @@ const Wizard = ({ onEnd }) => {
   return (
     <StepWizard className="wizard-container" transitions={animations}>
       <Welcome className="step"></Welcome>
-      <HowTo className="step">HOW TO USE</HowTo>
-      <Results className="step" onEnd={onEnd}>
-        SEE THE VALID MOVES
-      </Results>
+      <HowTo className="step"></HowTo>
+      <Find className="step"></Find>
+      <Results className="step" onEnd={onEnd}></Results>
     </StepWizard>
   );
 };

@@ -1,4 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# valid-chess-moves-app
+
+![Valid chess moves](https://github.com/caieu/valid-chess-moves-app/blob/master/src/assets/results.gif)
+
+## About
+
+A web application where you can see all the possible positions where the Knight chess piece can move in exactly 2 turns.
+
+## Instalation
+
+In the project directory, run `npm install` to install all the project dependencies.
+
+Create a `.env.development` file at project root folder with `REACT_APP_API_URL` variable with the API URL value.
 
 ## Available Scripts
 

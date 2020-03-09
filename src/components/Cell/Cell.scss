@@ -19,10 +19,16 @@
 
 .light-color {
   background-color: $cellLightColor;
+  svg {
+    fill: black;
+  }
 }
 
 .dark-color {
   background-color: $cellDarkColor;
+  svg {
+    fill: white;
+  }
 }
 
 .highlight {

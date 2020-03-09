@@ -1,6 +1,7 @@
 # valid-chess-moves-app
 
 ![Valid chess moves](https://github.com/caieu/valid-chess-moves-app/blob/master/src/assets/results.gif)
+[Live Demo](https://valid-chess-moves-webapp.herokuapp.com/)
 
 ## About
 

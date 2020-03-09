@@ -33,7 +33,8 @@ Cell.propTypes = {
   column: PropTypes.number,
   position: PropTypes.string,
   onClick: PropTypes.func,
-  highlight: PropTypes.bool
+  highlight: PropTypes.bool,
+  children: PropTypes.object
 };
 
 export default Cell;

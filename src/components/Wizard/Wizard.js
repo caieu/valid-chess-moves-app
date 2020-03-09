@@ -10,11 +10,11 @@ import "./Wizard.scss";
 
 const Wizard = ({ onEnd }) => {
   const animations = {
-    enterRight: `animated enterRight`,
-    enterLeft: `animated enterLeft`,
-    exitRight: `animated exitRight`,
-    exitLeft: `animated exitLeft`,
-    intro: `animated intro`
+    enterRight: "animated enterRight",
+    enterLeft: "animated enterLeft",
+    exitRight: "animated exitRight",
+    exitLeft: "animated exitLeft",
+    intro: "animated intro"
   };
   return (
     <StepWizard className="wizard-container" transitions={animations}>

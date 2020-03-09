@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ResultsGif from "../../../assets/results.gif";
 import { Card, Button, ButtonGroup } from "react-bootstrap";
 
-const Results = ({ nextStep, previousStep, onEnd }) => {
+const Results = ({ previousStep, onEnd }) => {
   return (
     <Card className="how-to-container">
       <Card.Img variant="top" src={ResultsGif} />
@@ -28,7 +28,6 @@ const Results = ({ nextStep, previousStep, onEnd }) => {
 
 Results.propTypes = {
   onEnd: PropTypes.func,
-  nextStep: PropTypes.func,
   previousStep: PropTypes.func
 };
 

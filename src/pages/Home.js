@@ -6,7 +6,7 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import { GetValidMoves } from "../api";
 import "./Home.scss";
 
-const Home = props => {
+const Home = () => {
   let [wizard, setWizard] = useState(true);
   let [possibleMoves, setPossibleMoves] = useState([]);
   let [selectedPosition, setSelectedPosition] = useState("");
@@ -24,6 +24,7 @@ const Home = props => {
           setLoading(false);
         })
         .catch(e => {
+          console.log(e);
           setLoading(false);
           setPossibleMoves([]);
         });
